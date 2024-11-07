@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<h1>New Commande Created</h1>
+
+<p><strong>Commande ID:</strong> {{ commande.id }}</p>
+<p><strong>Client Name:</strong> {{ commande.nomClient }}</p>
+<p><strong>Email:</strong> {{ commande.emailClient }}</p>
+<p><strong>Quantity:</strong> {{ commande.quantity }}</p>
+<p><strong>Total:</strong> {{ commande.total }}</p>
+<p><strong>Address:</strong> {{ commande.adresseClient }}</p>
+
+{% endblock %}

@@ -1,0 +1,25 @@
+{# templates/plat/index.html.twig #}
+{% extends 'base.html.twig' %}
+
+{% block title %}Plats - {{ category.libelle }}{% endblock %}
+
+{% block body %}
+<div class="container">
+    <h2>Plats - {{ category.libelle }}</h2>
+    <div class="row">
+        {% for plat in plats %}
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="{{ asset('Images/food/' ~ plat.image) }}" class="card-img-top" alt="{{ plat.libelle }}">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ plat.libelle }}</h5>
+                        <p class="card-text">{{ plat.description }}</p>
+                        <p class="card-text"><strong>Prix:</strong> {{ plat.prix }} €</p>
+                        <a href="{{ path('commande_new', {id: plat.id}) }}" class="btn btn-primary">Commander</a>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

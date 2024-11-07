@@ -3,3 +3,20 @@ controllers:
         path: ../src/Controller/
         namespace: App\Controller
     type: attribute
+
+
+categorie_index:
+    path: /categories
+    controller: App\Controller\CategorieController::index
+
+plat_by_category:
+    path: /plats/categorie/{id}
+    controller: App\Controller\PlatController::platsByCategory
+
+commande_new:
+    path: /commande/new/{id}
+    controller: App\Controller\CommandeController::new
+
+commande_confirmation:
+    path: /commande/confirmation
+    controller: App\Controller\CommandeController::confirmation

@@ -1,3 +1,99 @@
-body {
-    background-color: skyblue;
-}
+
+
+.navbar-nav {
+    gap: 30px; /* Adjust the gap to increase spacing between items */
+    height: auto;
+  }
+  
+  .nav-link {
+    color: black !important; /* Set the default link color */
+    transition: color 0.3s ease; /* Smooth transition for color change */
+    font-size: large;
+    font-weight: bolder;
+  }
+  
+  .nav-link:hover {
+    color:white!important; /* Change color on hover */
+  }
+  
+  .nav-item.active .nav-link {
+    color: #ffc107 !important; /* Active link color */
+  }
+  
+  .search-container {
+    position: relative;
+    text-align: center;
+  }
+  
+  .search-container img {
+    width: 100%;
+    height: auto;
+  }
+  
+  .search-bar {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    max-width: 400px;
+  }
+  
+  .category-card:hover {
+    transform: scale(1.1);
+    transition: transform 0.3s;
+  }
+  
+  .category-card img {
+    height: 200px; /* Adjust the height as needed */
+    object-fit: cover;
+  }
+  
+  h2 {
+    color:black;
+    text-align: center;
+  }
+  
+  .social-icons a {
+    color: white;
+    font-size: 24px;
+    margin: 0 10px;
+    transition: color 0.3s;
+  }
+  
+  .social-icons a:hover {
+    color: #ffc107;
+  }
+  
+  footer {
+    background-color: #343a40;
+    color: white;
+    height: 7%;
+  }
+  
+  .dish-card {
+    margin-bottom: 20px;
+  }
+  
+  .dish-card img {
+    height: 200px; /* Adjusted for consistency */
+    object-fit: cover;
+  }
+  
+  .order-button {
+    width: 100%;
+  }
+  
+  .dish-set {
+    display: none;
+  }
+  
+  .dish-set.active {
+    display: block;
+  }
+  
+  .order-form {
+    margin-top: 10px;
+  }
+  
+  
