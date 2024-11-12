@@ -1,0 +1,52 @@
+{# templates/categorie/index.html.twig #}
+{% extends 'base.html.twig' %}
+
+{% block title %}Accueil{% endblock %}
+
+{% block stylesheets %}
+ <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="{{ asset('styles/app.css') }}">
+    
+{% endblock %}
+
+{% block body %}
+
+<div class="container">
+    <h1>Les Catégories</h1>
+    <hr>
+    <div class="row">
+        {% for category in categories %}
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="{{ asset('Images/category/' ~ category.image) }}" class="card-img-top" alt="{{ category.libelle }}">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ category.libelle }}</h5>
+                        <a href="{{ path('category_index', {id: category.id}) }}" class="btn btn-primary">Voir les plats</a>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+    <hr>
+
+        <h1>Les Plats</h1>
+    <div class="row">
+        {% for plat in plats %}
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="{{ asset('Images/food/' ~ plat.image) }}" class="card-img-top" alt="{{ plat.libelle }}">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ plat.libelle }}</h5>
+                        <a href="{{ path('app_all_plats') }}" class="btn btn-primary">Voir les plats</a>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

@@ -1,99 +1,191 @@
 
 
-.navbar-nav {
-    gap: 30px; /* Adjust the gap to increase spacing between items */
-    height: auto;
+/* Container styling with padding and margin adjustments */
+.container {
+  margin-top: 50px; /* Space above the container */
+  padding: 20px; /* Space inside the container */
+  max-width: 1200px; /* Max width of the container */
+  margin-left: auto;
+  margin-right: auto; /* Center container */
+}
+
+/* Heading styles */
+h1 {
+  font-size: 2.5rem;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+/* Horizontal rule styling (divider under the title) */
+hr {
+  border: 0;
+  height: 1px;
+  background-color: black; /* Light grey color for the line */
+  margin-bottom: 30px; /* Space below the line */
+  width: 100%;
+}
+
+/* Card styling */
+.card {
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin-bottom: 30px; /* Space between cards */
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Card image styling */
+.card-img-top {
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  object-fit: cover;
+  height: 180px; /* Reduced height for smaller images */
+  width: 100%; /* Ensure the image takes full width of the card */
+  margin-bottom: 10px; /* Space between image and content */
+}
+
+/* Card body styling */
+.card-body {
+  background-color: #fff;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  padding: 15px;
+  text-align: center;
+}
+
+.card-title {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+/* Button styling */
+.btn-primary {
+  background-color: #007bff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1rem;
+  border-radius: 25px;
+  transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3;
+}
+
+/* Row styling */
+.row {
+  margin-top: 20px;
+}
+
+/* Media Query for small screens */
+@media (max-width: 767px) {
+  .card {
+    margin-bottom: 20px; /* Space between cards */
   }
-  
-  .nav-link {
-    color: black !important; /* Set the default link color */
-    transition: color 0.3s ease; /* Smooth transition for color change */
-    font-size: large;
-    font-weight: bolder;
+
+  /* Adjust container padding for smaller screens */
+  .container {
+    padding: 15px; /* Reduce padding for smaller screens */
   }
-  
-  .nav-link:hover {
-    color:white!important; /* Change color on hover */
+
+  /* Adjust image size for smaller screens */
+  .card-img-top {
+    height: 150px; /* Reduce image size on mobile */
   }
-  
-  .nav-item.active .nav-link {
-    color: #ffc107 !important; /* Active link color */
+
+  .card-body {
+    padding: 10px; /* Less padding on smaller screens */
   }
-  
-  .search-container {
-    position: relative;
-    text-align: center;
+}
+
+
+
+/* Navbar Styling */
+.navbar {
+  background-color: #ff6347; /* Tomato color for a bold navbar background */
+  padding: 15px 20px; /* Add padding for better spacing */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+/* Navbar brand (logo) styling */
+.navbar-brand {
+  font-size: 1.5rem; /* Adjust logo text size */
+  color: #fff !important; /* Ensure the logo text is white */
+  font-weight: bold; /* Make the logo bold */
+  display: flex;
+  align-items: center; /* Center the logo vertically */
+}
+
+.navbar-brand img {
+  width: 80px; /* Make the logo size consistent */
+  height: auto; /* Maintain aspect ratio */
+  margin-right: 10px; /* Space between logo and text */
+}
+
+/* Navbar links styling */
+.navbar-nav .nav-link {
+  color: #000 !important; /* Set text color to black */
+  font-size: 1rem; /* Slightly smaller text for links */
+  font-weight: 500; /* Medium weight for better readability */
+  padding: 10px 15px; /* Space inside each link */
+  border-radius: 25px; /* Round the edges of the links */
+  transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition */
+}
+
+/* Hover effect for navbar links */
+.navbar-nav .nav-link:hover {
+  background-color: #ff0; /* Yellow background color on hover */
+  color: #000; /* Black text color on hover */
+}
+/* Active Link Styling */
+.navbar-nav .nav-link.active {
+  background-color: #ff6347; /* Tomato color background for active link */
+  color: white !important;  /* White text color for active link */
+  font-weight: bold; /* Make the active link text bold */
+  transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition */
+}
+
+/* Collapse (mobile) navbar styling */
+.navbar-toggler {
+  border: none; /* Remove default border */
+  background-color: #fff; /* White background for the toggle button */
+}
+
+.navbar-toggler-icon {
+  background-color: #ff6347; /* Tomato color for the hamburger icon */
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 991px) {
+  .navbar-nav {
+    text-align: center; /* Center links on smaller screens */
   }
-  
-  .search-container img {
-    width: 100%;
-    height: auto;
+
+  .navbar-nav .nav-item {
+    margin-top: 10px; /* Space between the navbar items */
   }
-  
-  .search-bar {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 100%;
-    max-width: 400px;
+}
+
+@media (max-width: 767px) {
+  .navbar {
+    padding: 10px 15px; /* Reduced padding on mobile */
   }
-  
-  .category-card:hover {
-    transform: scale(1.1);
-    transition: transform 0.3s;
+
+  .navbar-brand {
+    font-size: 1.3rem; /* Smaller logo text size on mobile */
   }
-  
-  .category-card img {
-    height: 200px; /* Adjust the height as needed */
-    object-fit: cover;
+
+  .navbar-nav .nav-link {
+    font-size: 0.9rem; /* Slightly smaller text on mobile */
   }
-  
-  h2 {
-    color:black;
-    text-align: center;
-  }
-  
-  .social-icons a {
-    color: white;
-    font-size: 24px;
-    margin: 0 10px;
-    transition: color 0.3s;
-  }
-  
-  .social-icons a:hover {
-    color: #ffc107;
-  }
-  
-  footer {
-    background-color: #343a40;
-    color: white;
-    height: 7%;
-  }
-  
-  .dish-card {
-    margin-bottom: 20px;
-  }
-  
-  .dish-card img {
-    height: 200px; /* Adjusted for consistency */
-    object-fit: cover;
-  }
-  
-  .order-button {
-    width: 100%;
-  }
-  
-  .dish-set {
-    display: none;
-  }
-  
-  .dish-set.active {
-    display: block;
-  }
-  
-  .order-form {
-    margin-top: 10px;
-  }
-  
-  
+}
+
+
+

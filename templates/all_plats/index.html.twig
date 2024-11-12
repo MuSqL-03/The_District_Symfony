@@ -1,7 +1,7 @@
 {# templates/categorie/index.html.twig #}
 {% extends 'base.html.twig' %}
 
-{% block title %}Les Catégories{% endblock %}
+{% block title %}Tous Les Plats{% endblock %}
 
 {% block stylesheets %}
     <!-- Bootstrap CSS -->
@@ -16,16 +16,18 @@
 
 {% block body %}
 <div class="container">
-    <h1>Les Catégories</h1>
+    <h1>Tous Les Plats</h1>
     <hr>
-    <div class="row">
-        {% for category in categories %}
+   <div class="row">
+        {% for plat in plats %}
             <div class="col-md-4">
                 <div class="card">
-                    <img src="{{ asset('Images/category/' ~ category.image) }}" class="card-img-top" alt="{{ category.libelle }}">
+                    <img src="{{ asset('Images/food/' ~ plat.image) }}" class="card-img-top" alt="{{ plat.libelle }}">
                     <div class="card-body">
-                        <h5 class="card-title">{{ category.libelle }}</h5>
-                        <a href="{{ path('plat_by_category', {id: category.id}) }}" class="btn btn-primary">Voir les plats</a>
+                        <h5 class="card-title">{{ plat.libelle }}</h5>
+                        <p class="card-text">{{ plat.description }}</p>
+                        <p class="card-text"><strong>Prix:</strong> {{ plat.prix }} €</p>
+                        <a href="{{ path('commande_new', {id: plat.id}) }}" class="btn btn-primary">Commander</a>
                     </div>
                 </div>
             </div>

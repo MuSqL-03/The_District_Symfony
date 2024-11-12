@@ -3,9 +3,17 @@
 {% block title %}New Commande{% endblock %}
 
 {% block body %}
-    <h1>Create new Commande</h1>
+    <div class="container mt-4">
+        <h1>Create New Commande</h1>
 
-    {{ include('commande/_form.html.twig') }}
+        <div class="card">
+            <div class="card-body">
+                {{ include('commande/_form.html.twig') }}
+            </div>
+        </div>
 
-    <a href="{{ path('app_commande_index') }}">back to list</a>
+        <div class="mt-3">
+            <a href="{{ path('app_commande_index') }}" class="btn btn-secondary">Back to List</a>
+        </div>
+    </div>
 {% endblock %}

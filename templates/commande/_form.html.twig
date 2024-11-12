@@ -1,4 +1,61 @@
+
+<head>
+    <style>
+
+
+/* Add some spacing between the form fields and the button */
+.form-group {
+    margin-bottom: 20px;  /* Space between each form field and between the button and fields */
+    text-align:left;
+    margin:20px;
+    font-size:20px;
+    font-family:bold;
+    padding:1px;
+}
+
+
+/* Style the button */
+.btn {
+    background-color: #007bff; /* Example background color */
+    color: white; /* Text color */
+    padding: 10px 20px; /* Padding for the button */
+    border: none; /* Remove border */
+    border-radius: 4px; /* Rounded corners */
+    width: 100%;  /* Make button take the full width, adjust as necessary */
+}
+
+.btn:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+
+/* Optional: Adjust button alignment if you want it centered or aligned to the right */
+.form-group button {
+    width: auto; /* Allow the button to have its natural width */
+    margin-top: 10px; /* Ensure some space from the form fields */
+}
+
+.card-body {
+  background-color: pink;
+  }
+
+    </style>
+</head>
+
+
+
+
+
+
+
+
+
 {{ form_start(form) }}
-    {{ form_widget(form) }}
-    <button class="btn">{{ button_label|default('Save') }}</button>
+    {% for field in form %}
+        <div class="form-group">
+            {{ form_row(field, {'attr': {'class': 'form-control text-left'}}) }}
+        </div>
+    {% endfor %}
+    <div class="form-group">
+        <button class="btn btn-primary">{{ button_label|default('Save') }}</button>
+    </div>
 {{ form_end(form) }}
