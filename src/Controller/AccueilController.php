@@ -21,7 +21,7 @@ class AccueilController extends AbstractController
         $plats = array_slice($plats, 0, 3);
 
 
-
+ 
 
 
 

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Contact Message</title>
+</head>
+<body>
+    <h2>New Contact Message</h2>
+    <p>You have received a new message from the contact form on your website.</p>
+
+    <h3>Contact Details</h3>
+    <ul>
+        <li><strong>Nom:</strong> {{ message.nom }}</li>
+        <li><strong>Prénom:</strong> {{ message.prenom }}</li>
+        <li><strong>Email:</strong> {{ message.email }}</li>
+    </ul>
+    
+    <h3>Message</h3>
+    <p>{{ message.message|nl2br }}</p>
+    <hr>
+    <p>This message was sent from the contact form on your website.</p>
+</body>
+</html>
