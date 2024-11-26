@@ -60,7 +60,32 @@
                             <a class="nav-link" href="{{ path('app_contact') }}">Contact</a>
                         </li>
                     </ul>
+
+                   
                 </div>
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    {% if app.user %} 
+          
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">Mon compte</a>
+                    </li>  
+                    
+                    <li class="nav-item">
+                      <a class="nav-link" href="{{ path('app_logout') }}">Me déconnecter</a>
+                    </li>
+          
+                    {% else  %}
+          
+                      <li class="nav-item">
+                        <a class="nav-link" href="{{ path('app_register') }}">M'inscrire</a>
+                      </li>
+          
+                      <li class="nav-item">
+                        <a class="nav-link" href="{{ path('app_login') }}">Me Connecter</a>
+                      </li>
+          
+                    {% endif %}
+                    </ul>
             </div>
         </nav>
 

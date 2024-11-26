@@ -42,6 +42,9 @@ class Commande
     #[ORM\Column(type: Types::TEXT)]
     private ?string $adresseClient = null;
 
+    #[ORM\ManyToOne(inversedBy: 'commandes')]
+    private ?Users $users = null;
+
     // Getter and Setter Methods
 
     public function getId(): ?int
@@ -153,6 +156,18 @@ class Commande
     public function setAdresseClient(string $adresseClient): self
     {
         $this->adresseClient = $adresseClient;
+
+        return $this;
+    }
+
+    public function getUsers(): ?Users
+    {
+        return $this->users;
+    }
+
+    public function setUsers(?Users $users): static
+    {
+        $this->users = $users;
 
         return $this;
     }
