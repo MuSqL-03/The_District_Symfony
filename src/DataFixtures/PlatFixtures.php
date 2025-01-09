@@ -9,7 +9,7 @@ use Doctrine\Common\DataFixtures\DependentFixtureInterface;
 
 class PlatFixtures extends Fixture implements DependentFixtureInterface
 {
-    public function load(ObjectManager $manager)
+    public function load(ObjectManager $manager): void
     {
         // Array of plat data
         $plats = [
@@ -104,7 +104,7 @@ class PlatFixtures extends Fixture implements DependentFixtureInterface
             $plat->setActive($data['active']);
 
             // Set the category reference
-            $categorie = $this->getReference('categorie_' . $data['id_categorie']);
+            $categorie = $this->getReference('categorie_' , $data['id_categorie']);
             $plat->setCategorie($categorie);
 
             $manager->persist($plat);
@@ -113,7 +113,7 @@ class PlatFixtures extends Fixture implements DependentFixtureInterface
         $manager->flush();
     }
 
-    public function getDependencies()
+    public function getDependencies(): array
     {
         return [
             CategorieFixtures::class,

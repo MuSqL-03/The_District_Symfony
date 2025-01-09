@@ -8,7 +8,7 @@ use Doctrine\Persistence\ObjectManager;
 
 class CategorieFixtures extends Fixture
 {
-    public function load(ObjectManager $manager)
+    public function load(ObjectManager $manager): void
     {
         $categories = [
             ['id' => 4,  'libelle' => 'Pizza', 'image' => 'pizza_cat.jpg', 'active' => true],
